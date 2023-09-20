@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-app-service
+  namespace: java-app
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 9001
+  selector:
+    app: java-app

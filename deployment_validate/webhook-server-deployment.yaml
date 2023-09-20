@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-validate
+  namespace: webhook
+  labels:
+    app: deployment-validate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-validate
+  template:
+    metadata:
+      labels:
+        app: deployment-validate
+    spec:
+      containers:
+        - name: deployment-validate
+          image: kubison/deployment-validator:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 443
+          volumeMounts:
+            - name: tls-certs
+              mountPath: /etc/certs
+              readOnly: true
+      volumes:
+        - name: tls-certs
+          secret:
+            secretName: deployment-validate-tls
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deployment-validate
+  namespace: webhook
+spec:
+  selector:
+    app: deployment-validate
+  ports:
+    - port: 443
+      targetPort: 443

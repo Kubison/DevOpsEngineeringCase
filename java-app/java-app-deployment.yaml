@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app-deployment
+  namespace: java-app
+  labels:
+    app: java-app
+spec:
+  nodeSelector:
+    pool: java-app 
+  replicas: 4
+  selector:
+    matchLabels:
+      app: java-app
+  template:
+    metadata:
+      labels:
+        app: java-app
+    spec:
+      containers:
+      - name: java-app
+        image: kubison/java-app:1
+        ports:
+        - containerPort: 9001
+        readinessProbe:
+          httpGet:
+            path: /api/foos?val=imok
+            port: 9001
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /api/foos?val=imok
+            port: 9001
+          initialDelaySeconds: 10
+          periodSeconds: 15
+          failureThreshold: 3
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+      nodeSelector:
+        app: java-app 
+      imagePullSecrets:
+      - name: java-app-registry-key

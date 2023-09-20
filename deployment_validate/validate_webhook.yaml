@@ -1,0 +1,19 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: deployment-validation
+webhooks:
+  - name: "deployment-validate.webhook.svc"
+    rules:
+      - operations: [ "CREATE","UPDATE"]
+        apiGroups: [ "apps" ]
+        apiVersions: [ "v1" ]
+        resources: [ "deployments" ]
+    clientConfig:
+      service:
+        namespace: webhook
+        name: deployment-validate
+        path: "/validate"
+      caBundle: <ENCODED_CA>
+    admissionReviewVersions: ["v1"]
+    sideEffects: None

@@ -1,0 +1,27 @@
+---
+- name: Deployjava-app to Kubernetes
+  hosts: localhost
+  tasks:
+    - name: Apply java-app-service
+      kubernetes.core.k8s: 
+        kubeconfig: "{{ kubeconfig }}"
+        definition: "{{ lookup('file', './java-app-service.yaml') }}"
+        state: present
+    
+    - name: Apply java-app-ingress
+      kubernetes.core.k8s: 
+        kubeconfig: "{{ kubeconfig }}"
+        definition: "{{ lookup('file', './java-app-ingress.yaml') }}"
+        state: present
+      
+    - name: Apply java-app-hpa
+      kubernetes.core.k8s: 
+        kubeconfig: "{{ kubeconfig }}"
+        definition: "{{ lookup('file', './java-app-hpa.yaml') }}"
+        state: present
+    
+    - name: Apply java-app-deployment
+      kubernetes.core.k8s: 
+        kubeconfig: "{{ kubeconfig }}"
+        definition: "{{ lookup('file', './java-app-deployment.yaml') }}"
+        state: present

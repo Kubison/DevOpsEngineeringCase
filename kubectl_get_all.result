@@ -1,0 +1,137 @@
+NAMESPACE          NAME                                                     READY   STATUS    RESTARTS        AGE
+calico-apiserver   pod/calico-apiserver-698687757b-c9lxs                    1/1     Running   1 (3d17h ago)   4d22h
+calico-apiserver   pod/calico-apiserver-698687757b-m948w                    1/1     Running   0               4d22h
+calico-system      pod/calico-kube-controllers-789dc4c76b-qdtkf             1/1     Running   0               4d22h
+calico-system      pod/calico-node-58psb                                    1/1     Running   0               4d22h
+calico-system      pod/calico-node-jctwr                                    1/1     Running   0               4d22h
+calico-system      pod/calico-node-q55nt                                    1/1     Running   0               44h
+calico-system      pod/calico-typha-869557fdb-d55w7                         1/1     Running   0               4d22h
+calico-system      pod/calico-typha-869557fdb-g627g                         1/1     Running   0               4d22h
+calico-system      pod/csi-node-driver-hn2dm                                2/2     Running   0               4d22h
+calico-system      pod/csi-node-driver-m4xgg                                2/2     Running   0               4d22h
+calico-system      pod/csi-node-driver-tfgfm                                2/2     Running   0               4d22h
+default            pod/grafana-f7b646979-g66gj                              1/1     Running   0               33h
+default            pod/nginx-ingress-controller-9ff787dc-zddqb              1/1     Running   0               21h
+default            pod/prometheus-alertmanager-0                            1/1     Running   0               34h
+default            pod/prometheus-kube-state-metrics-69c8887cfd-99nwp       1/1     Running   0               34h
+default            pod/prometheus-prometheus-node-exporter-cjdcw            1/1     Running   0               34h
+default            pod/prometheus-prometheus-node-exporter-pqg67            1/1     Running   0               34h
+default            pod/prometheus-prometheus-node-exporter-pvnr5            1/1     Running   0               34h
+default            pod/prometheus-prometheus-pushgateway-79ff799669-9jx8s   1/1     Running   0               34h
+default            pod/prometheus-server-b978f5586-slcb2                    2/2     Running   0               34h
+java-app           pod/java-app-deployment-6c86c54d9c-2rlqv                 1/1     Running   0               2d9h
+java-app           pod/java-app-deployment-6c86c54d9c-ckc7x                 1/1     Running   0               2d9h
+java-app           pod/java-app-deployment-6c86c54d9c-cxnpj                 1/1     Running   0               2d9h
+java-app           pod/java-app-deployment-6c86c54d9c-dgmbd                 1/1     Running   0               2d9h
+jenkins            pod/jenkins-6cdcccdc79-hd9k9                             1/1     Running   0               3d16h
+kube-system        pod/coredns-5d78c9869d-5dv82                             1/1     Running   0               4d22h
+kube-system        pod/coredns-5d78c9869d-hdmkw                             1/1     Running   0               4d22h
+kube-system        pod/etcd-k8s-master                                      1/1     Running   0               4d22h
+kube-system        pod/kube-apiserver-k8s-master                            1/1     Running   0               4d22h
+kube-system        pod/kube-controller-manager-k8s-master                   1/1     Running   0               4d22h
+kube-system        pod/kube-proxy-2pmgt                                     1/1     Running   0               4d22h
+kube-system        pod/kube-proxy-drjcg                                     1/1     Running   0               4d22h
+kube-system        pod/kube-proxy-fsq2r                                     1/1     Running   0               4d22h
+kube-system        pod/kube-scheduler-k8s-master                            1/1     Running   0               4d22h
+kube-system        pod/metrics-server-7b4dfb6f8d-6bkkc                      1/1     Running   0               3d18h
+logging            pod/elasticsearch-client-86c468767-v7j74                 1/1     Running   0               4d21h
+logging            pod/elasticsearch-data-0                                 1/1     Running   0               4d21h
+logging            pod/elasticsearch-master-65d88d4457-dtl97                1/1     Running   0               4d21h
+logging            pod/fluent-bit-8l9t6                                     1/1     Running   0               4d20h
+logging            pod/fluent-bit-c2xgs                                     1/1     Running   0               4d20h
+logging            pod/fluent-bit-d2tl5                                     1/1     Running   0               4d20h
+logging            pod/kibana-659967f79d-5mlt5                              1/1     Running   0               4d21h
+tigera-operator    pod/tigera-operator-549d4f9bdb-bbpqf                     1/1     Running   2 (33h ago)     4d22h
+webhook            pod/deployment-validate-69df9b8c75-7msnf                 1/1     Running   0               40h
+
+NAMESPACE          NAME                                          TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                          AGE
+calico-apiserver   service/calico-api                            ClusterIP      10.108.213.70    <none>        443/TCP                          4d22h
+calico-system      service/calico-kube-controllers-metrics       ClusterIP      None             <none>        9094/TCP                         4d22h
+calico-system      service/calico-typha                          ClusterIP      10.101.192.151   <none>        5473/TCP                         4d22h
+default            service/grafana                               ClusterIP      10.111.8.39      <none>        80/TCP                           33h
+default            service/grafana-ext                           NodePort       10.106.66.197    <none>        80:31485/TCP                     33h
+default            service/kubernetes                            ClusterIP      10.96.0.1        <none>        443/TCP                          4d22h
+default            service/nginx-ingress-controller              LoadBalancer   10.104.103.254   <pending>     80:31636/TCP,443:30575/TCP       21h
+default            service/prometheus-alertmanager               ClusterIP      10.108.81.128    <none>        9093/TCP                         34h
+default            service/prometheus-alertmanager-headless      ClusterIP      None             <none>        9093/TCP                         34h
+default            service/prometheus-kube-state-metrics         ClusterIP      10.96.79.133     <none>        8080/TCP                         34h
+default            service/prometheus-prometheus-node-exporter   ClusterIP      10.106.226.125   <none>        9100/TCP                         34h
+default            service/prometheus-prometheus-pushgateway     ClusterIP      10.98.134.82     <none>        9091/TCP                         34h
+default            service/prometheus-server                     ClusterIP      10.105.113.75    <none>        80/TCP                           34h
+default            service/prometheus-server-ext                 NodePort       10.102.169.58    <none>        80:30269/TCP                     34h
+java-app           service/java-app-service                      ClusterIP      10.96.106.82     <none>        80/TCP                           21h
+jenkins            service/jenkins                               NodePort       10.102.36.37     <none>        8080:30000/TCP,50000:30982/TCP   4d21h
+kube-system        service/kube-dns                              ClusterIP      10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP           4d22h
+kube-system        service/metrics-server                        ClusterIP      10.103.94.106    <none>        443/TCP                          3d18h
+logging            service/elasticsearch-client                  ClusterIP      10.103.56.22     <none>        9200/TCP,9300/TCP                4d21h
+logging            service/elasticsearch-data                    ClusterIP      10.106.244.74    <none>        9300/TCP                         4d21h
+logging            service/elasticsearch-master                  ClusterIP      10.108.175.204   <none>        9300/TCP                         4d21h
+logging            service/kibana                                NodePort       10.97.151.109    <none>        5601:30001/TCP                   4d21h
+webhook            service/deployment-validate                   ClusterIP      10.103.59.96     <none>        443/TCP                          42h
+
+NAMESPACE       NAME                                                 DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+calico-system   daemonset.apps/calico-node                           3         3         3       3            3           kubernetes.io/os=linux   4d22h
+calico-system   daemonset.apps/csi-node-driver                       3         3         3       3            3           kubernetes.io/os=linux   4d22h
+default         daemonset.apps/prometheus-prometheus-node-exporter   3         3         3       3            3           kubernetes.io/os=linux   34h
+kube-system     daemonset.apps/kube-proxy                            3         3         3       3            3           kubernetes.io/os=linux   4d22h
+logging         daemonset.apps/fluent-bit                            3         3         3       3            3           <none>                   4d20h
+
+NAMESPACE          NAME                                                READY   UP-TO-DATE   AVAILABLE   AGE
+calico-apiserver   deployment.apps/calico-apiserver                    2/2     2            2           4d22h
+calico-system      deployment.apps/calico-kube-controllers             1/1     1            1           4d22h
+calico-system      deployment.apps/calico-typha                        2/2     2            2           4d22h
+default            deployment.apps/grafana                             1/1     1            1           33h
+default            deployment.apps/nginx-ingress-controller            1/1     1            1           21h
+default            deployment.apps/prometheus-kube-state-metrics       1/1     1            1           34h
+default            deployment.apps/prometheus-prometheus-pushgateway   1/1     1            1           34h
+default            deployment.apps/prometheus-server                   1/1     1            1           34h
+java-app           deployment.apps/java-app-deployment                 4/4     4            4           3d13h
+jenkins            deployment.apps/jenkins                             1/1     1            1           4d22h
+kube-system        deployment.apps/coredns                             2/2     2            2           4d22h
+kube-system        deployment.apps/metrics-server                      1/1     1            1           3d18h
+logging            deployment.apps/elasticsearch-client                1/1     1            1           4d21h
+logging            deployment.apps/elasticsearch-master                1/1     1            1           4d21h
+logging            deployment.apps/kibana                              1/1     1            1           4d21h
+tigera-operator    deployment.apps/tigera-operator                     1/1     1            1           4d22h
+webhook            deployment.apps/deployment-validate                 1/1     1            1           42h
+
+NAMESPACE          NAME                                                           DESIRED   CURRENT   READY   AGE
+calico-apiserver   replicaset.apps/calico-apiserver-698687757b                    2         2         2       4d22h
+calico-system      replicaset.apps/calico-kube-controllers-789dc4c76b             1         1         1       4d22h
+calico-system      replicaset.apps/calico-typha-869557fdb                         2         2         2       4d22h
+default            replicaset.apps/grafana-f7b646979                              1         1         1       33h
+default            replicaset.apps/nginx-ingress-controller-9ff787dc              1         1         1       21h
+default            replicaset.apps/prometheus-kube-state-metrics-69c8887cfd       1         1         1       34h
+default            replicaset.apps/prometheus-prometheus-pushgateway-79ff799669   1         1         1       34h
+default            replicaset.apps/prometheus-server-b978f5586                    1         1         1       34h
+java-app           replicaset.apps/java-app-deployment-56c5fcc4d4                 0         0         0       2d9h
+java-app           replicaset.apps/java-app-deployment-6c86c54d9c                 4         4         4       2d9h
+java-app           replicaset.apps/java-app-deployment-6f5c44495b                 0         0         0       2d9h
+java-app           replicaset.apps/java-app-deployment-6f67b466fd                 0         0         0       3d13h
+java-app           replicaset.apps/java-app-deployment-7bdcc8f664                 0         0         0       2d9h
+jenkins            replicaset.apps/jenkins-68dd4b85b4                             0         0         0       4d22h
+jenkins            replicaset.apps/jenkins-6cdcccdc79                             1         1         1       3d16h
+jenkins            replicaset.apps/jenkins-95c94869b                              0         0         0       3d17h
+kube-system        replicaset.apps/coredns-5d78c9869d                             2         2         2       4d22h
+kube-system        replicaset.apps/metrics-server-5d875656f5                      0         0         0       3d18h
+kube-system        replicaset.apps/metrics-server-75f45b4dd4                      0         0         0       3d18h
+kube-system        replicaset.apps/metrics-server-7b4dfb6f8d                      1         1         1       3d18h
+logging            replicaset.apps/elasticsearch-client-86c468767                 1         1         1       4d21h
+logging            replicaset.apps/elasticsearch-master-65d88d4457                1         1         1       4d21h
+logging            replicaset.apps/kibana-659967f79d                              1         1         1       4d21h
+tigera-operator    replicaset.apps/tigera-operator-549d4f9bdb                     1         1         1       4d22h
+webhook            replicaset.apps/deployment-validate-5c67c484df                 0         0         0       40h
+webhook            replicaset.apps/deployment-validate-689d768ff6                 0         0         0       42h
+webhook            replicaset.apps/deployment-validate-696df8c949                 0         0         0       41h
+webhook            replicaset.apps/deployment-validate-69df9b8c75                 1         1         1       40h
+webhook            replicaset.apps/deployment-validate-766db95db8                 0         0         0       42h
+webhook            replicaset.apps/deployment-validate-8f87c6f45                  0         0         0       41h
+webhook            replicaset.apps/deployment-validate-b4ffcfdd8                  0         0         0       41h
+webhook            replicaset.apps/deployment-validate-f56cbfbbf                  0         0         0       41h
+
+NAMESPACE   NAME                                       READY   AGE
+default     statefulset.apps/prometheus-alertmanager   1/1     34h
+logging     statefulset.apps/elasticsearch-data        1/1     4d21h
+
+NAMESPACE   NAME                                               REFERENCE                        TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
+java-app    horizontalpodautoscaler.autoscaling/java-app-hpa   Deployment/java-app-deployment   2%/75%    4         6         4          3d13h
